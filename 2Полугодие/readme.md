@@ -103,3 +103,21 @@ for i, t in enumerate(zip(st,fn),start=1):
 print(c,m)
          |
 
+a=[]
+f=open('27-A.txt')
+for i in f:
+    a.append(int(i))
+a.pop(0)
+b=len(a)//2
+l=len(a)
+a=a+a
+for i in range(l):
+    d=a[i:i+l]
+    cost=0
+    for x in range(len(d)):
+        if x>b:
+            ind=l-x
+        else: ind=x
+        cost=cost+d[x]*ind
+    print(cost)
+
